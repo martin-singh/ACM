@@ -8,12 +8,14 @@ namespace ACM.BL
 {
     public class Address : EntityBase
     {
+        // CONSTRUCTORS
         public Address() {}
         public Address(int addressId)
         {
             this.AddressId = addressId;
         }
 
+        // PROPERTIES
         public int AddressId { get; private set; }
         public int AddressType { get; set; }
         public string StreetLine1 { get; set; }
@@ -23,6 +25,7 @@ namespace ACM.BL
         public string State { get; set; }
         public string Country { get; set; }
 
+        // METHOD
         /// <summary>
         /// Validates the address data.
         /// </summary>

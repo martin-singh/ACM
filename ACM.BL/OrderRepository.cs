@@ -8,6 +8,7 @@ namespace ACM.BL
 {
     public class OrderRepository
     {
+        // METHODS
         /// <summary>
         /// Retrieve one order.
         /// </summary>

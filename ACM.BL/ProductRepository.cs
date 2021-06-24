@@ -8,6 +8,7 @@ namespace ACM.BL
 {
     public class ProductRepository
     {
+        // METHODS
         /// <summary>
         /// Retrieve one product.
         /// </summary>

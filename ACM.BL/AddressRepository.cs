@@ -8,6 +8,7 @@ namespace ACM.BL
 {
     public class AddressRepository
     {
+        // METHODS
         /// <summary>
         /// Retrieve one address.
         /// </summary>

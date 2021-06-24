@@ -7,14 +7,16 @@ using System.Threading.Tasks;
 
 namespace ACM.BL
 {
-    public class Product : EntityBase
+    public class Product : EntityBase, ILoggable
     {
+        // CONSTRUCTORS
         public Product() {}
         public Product(int productId)
         {
             this.ProductId = productId;
         }
 
+        // FIELDS & PROPERTIES
         public int ProductId { get; private set; }
         private string productName;
         public string ProductName 
@@ -31,7 +33,11 @@ namespace ACM.BL
         public string ProductDescription { get; set; }
         public decimal? CurrentPrice { get; set; } // Nullable type
 
+        // METHODS
         public override string ToString() => ProductName;
+
+        public string Log() =>
+            $"{ProductId}: {ProductName} Detail: {ProductDescription} Status: {EntityState.ToString()}";
 
         /// <summary>
         /// Validates the product data.
