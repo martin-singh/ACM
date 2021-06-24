@@ -20,26 +20,6 @@ namespace ACM.BL
         public decimal? CurrentPrice { get; set; } // Nullable type
 
         /// <summary>
-        /// Retrieve one product.
-        /// </summary>
-        /// <returns></returns>
-        public Product Retrieve(int productId)
-        {
-            // Code that retrieves the definied product.
-            return new Product();
-        }
-
-        /// <summary>
-        /// Saves the current product.
-        /// </summary>
-        /// <returns></returns>
-        public bool Save()
-        {
-            // Code that saves the current product.
-            return true;
-        }
-
-        /// <summary>
         /// Validates the product data.
         /// </summary>
         /// <returns></returns>
