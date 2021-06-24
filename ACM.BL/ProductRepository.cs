@@ -11,7 +11,6 @@ namespace ACM.BL
         /// <summary>
         /// Retrieve one product.
         /// </summary>
-        /// <returns></returns>
         public Product Retrieve(int productId)
         {
             // Create the instance of the Product class and pass in the requested id.
@@ -31,11 +30,29 @@ namespace ACM.BL
         /// <summary>
         /// Saves the current product.
         /// </summary>
-        /// <returns></returns>
         public bool Save(Product product)
         {
-            // Code that saves the current product.
-            return true;
+            bool success = true;
+            if (product.HasChanged)
+            {
+                if (product.IsValid)
+                {
+                    if (product.IsNew)
+                    {
+                        // Call an Insert Stored Procedure
+                    }
+                    else
+                    {
+                        // Call an Update Stored Procedure
+                    }
+                }
+                else
+                {
+                    success = false;
+                }
+            }
+            return success;
         }
+
     }
 }

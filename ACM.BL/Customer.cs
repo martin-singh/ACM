@@ -4,7 +4,7 @@ using System.Collections.Generic;
 // ACM - Business Logic (Layer) Component
 namespace ACM.BL
 {
-    public class Customer
+    public class Customer : EntityBase
     {
         public Customer() : this(0) {} // Default constructor. By using ": this(0)" the both constructors are chained.
         public Customer(int customerId) // Overloaded constructor
@@ -36,12 +36,12 @@ namespace ACM.BL
         public static int InstanceCount { get; set; }
         public List<Address> AddressList { get; set; }
 
+        public override string ToString() => FullName;
 
         /// <summary>
         /// Validates the customer data.
         /// </summary>
-        /// <returns></returns>
-        public bool Validate()
+        public override bool Validate()
         {
             bool isValid = true;
 
@@ -50,5 +50,6 @@ namespace ACM.BL
 
             return isValid;
         }
+
     }
 }

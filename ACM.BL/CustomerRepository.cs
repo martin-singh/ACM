@@ -18,7 +18,6 @@ namespace ACM.BL
         /// <summary>
         /// Retrieve one customer.
         /// </summary>
-        /// <returns></returns>
         public Customer Retrieve(int customerId)
         {
             // Create the instance of the Customer class and pass in the requested id.
@@ -39,11 +38,29 @@ namespace ACM.BL
         /// <summary>
         /// Saves the current customer.
         /// </summary>
-        /// <returns></returns>
         public bool Save(Customer customer)
         {
-            // Code that saves the definied customer.
-            return true;
+            bool success = true;
+            if (customer.HasChanged)
+            {
+                if (customer.IsValid)
+                {
+                    if (customer.IsNew)
+                    {
+                        // Call an Insert Stored Procedure
+                    }
+                    else
+                    {
+                        // Call an Update Stored Procedure
+                    }
+                }
+                else
+                {
+                    success = false;
+                }
+            }
+            return success;
         }
+
     }
 }

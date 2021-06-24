@@ -22,7 +22,6 @@ namespace ACM.BL
         /// <summary>
         /// Retrieve one order item.
         /// </summary>
-        /// <returns></returns>
         public OrderItem Retrieve(int orderItemId)
         {
             // Code that retrieves the definied order item.
@@ -32,7 +31,6 @@ namespace ACM.BL
         /// <summary>
         /// Saves the current order item.
         /// </summary>
-        /// <returns></returns>
         public bool Save()
         {
             // Code that saves the current order item.
@@ -42,7 +40,6 @@ namespace ACM.BL
         /// <summary>
         /// Validates the order item data.
         /// </summary>
-        /// <returns></returns>
         public bool Validate()
         {
             bool isValid = true;
@@ -53,5 +50,6 @@ namespace ACM.BL
 
             return isValid;
         }
+
     }
 }

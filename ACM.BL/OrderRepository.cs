@@ -11,7 +11,6 @@ namespace ACM.BL
         /// <summary>
         /// Retrieve one order.
         /// </summary>
-        /// <returns></returns>
         public Order Retrieve(int orderId)
         {
             // Create the instance of the Order class and pass in the requested id.
@@ -30,11 +29,29 @@ namespace ACM.BL
         /// <summary>
         /// Saves the current order.
         /// </summary>
-        /// <returns></returns>
-        public bool Save()
+        public bool Save(Order order)
         {
-            // Code that saves the current order.
-            return true;
+            bool success = true;
+            if (order.HasChanged)
+            {
+                if (order.IsValid)
+                {
+                    if (order.IsNew)
+                    {
+                        // Call an Insert Stored Procedure
+                    }
+                    else
+                    {
+                        // Call an Update Stored Procedure
+                    }
+                }
+                else
+                {
+                    success = false;
+                }
+            }
+            return success;
         }
+
     }
 }

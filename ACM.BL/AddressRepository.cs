@@ -11,7 +11,6 @@ namespace ACM.BL
         /// <summary>
         /// Retrieve one address.
         /// </summary>
-        /// <returns></returns>
         public Address Retrieve(int addressId)
         {
             // Create the instance of the Address class and pass in the requested id.
@@ -35,7 +34,6 @@ namespace ACM.BL
         /// <summary>
         /// Retrieves multible addresses.
         /// </summary>
-        /// <returns></returns>
         public IEnumerable<Address> RetrieveByCustomerId(int customerId)
         {
             // Code that retrieves the definied addresses for the customer.
@@ -71,11 +69,28 @@ namespace ACM.BL
         /// <summary>
         /// Saves the current address.
         /// </summary>
-        /// <returns></returns>
         public bool Save(Address address)
         {
-            // Code that saves the definied address.
-            return true;
+            bool success = true;
+            if (address.HasChanged)
+            {
+                if (address.IsValid)
+                {
+                    if (address.IsNew)
+                    {
+                        // Call an Insert Stored Procedure
+                    }
+                    else
+                    {
+                        // Call an Update Stored Procedure
+                    }
+                }
+                else
+                {
+                    success = false;
+                }
+            }
+            return success;
         }
     }
 }

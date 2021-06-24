@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ACM.BL
 {
-    public class Order
+    public class Order : EntityBase
     {
         public Order() : this(0) {}
         public Order(int orderId)
@@ -21,11 +21,12 @@ namespace ACM.BL
         public int ShippingAddressId { get; set; }
         public List<OrderItem> OrderItemsList { get; set; }
 
+        public override string ToString() => $"{OrderDate.Value.Date} ({OrderId})";
+
         /// <summary>
         /// Validates the order data.
         /// </summary>
-        /// <returns></returns>
-        public bool Validate()
+        public override bool Validate()
         {
             bool isValid = true;
 
@@ -33,5 +34,6 @@ namespace ACM.BL
 
             return isValid;
         }
+
     }
 }
