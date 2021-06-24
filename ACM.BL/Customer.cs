@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// ACM - Business Logic (Layer) Component
+// ACM - Business Logic Layer
 namespace ACM.BL
 {
     public class Customer : EntityBase
